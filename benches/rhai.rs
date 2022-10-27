@@ -25,7 +25,7 @@ const PROG: &'static str = r#"
 
     let array = [];
     for i in 0..100000 {
-        array.push(RustData_new(generate_string.call(rand(16) + 1)));
+        array.push(generate_string.call(rand(16) + 1));
     }
 "#;
 
@@ -46,7 +46,7 @@ fn benchmark(c: &mut Criterion) {
 
     let ast = engine.compile(PROG).unwrap();
 
-    c.bench_function("Sort userdata", |b| {
+    c.bench_function("userdata", |b| {
         b.iter(|| {
             engine.eval_ast::<()>(&ast).unwrap();
         });

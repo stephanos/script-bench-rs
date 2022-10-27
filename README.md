@@ -15,15 +15,16 @@ Simply run the `bench.py` script to generate images. It requires `cargo criterio
 
 ## Environment
 
-|       |                |
-| ----- | -------------- |
-| OS    | macOS 12.6, M2 |
-| mlua  | v0.8.4         |
-| rlua  | v0.19.4        |
-| rhai  | v1.10.1        |
-| rune  | v0.12.0        |
-| rustc | v1.64.0        |
+|          |                |
+| -------- | -------------- |
+| OS       | macOS 12.6, M2 |
+| mlua     | v0.8.4         |
+| starlark | v0.8.0         |
+| rlua     | v0.19.4        |
+| rhai     | v1.10.1        |
+| rune     | v0.12.0        |
+| rustc    | v1.64.0        |
 
 ## Results
 
-![Sorting userdata objects](Sort%20userdata.png)
+![userdata objects](userdata.png)

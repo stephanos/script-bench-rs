@@ -31,12 +31,11 @@ fn benchmark(c: &mut Criterion) {
     let module = Module::new();
     let globals = GlobalsBuilder::standard().with(functions).build();
 
-    c.bench_function("Sort userdata", |b| {
+    c.bench_function("userdata", |b| {
         b.iter_batched(
             || {
-                let ast =
-                    AstModule::parse("sort_userdata.star", PROG.to_owned(), &Dialect::Extended)
-                        .expect("parse");
+                let ast = AstModule::parse("userdata.star", PROG.to_owned(), &Dialect::Extended)
+                    .expect("parse");
                 let eval = Evaluator::new(&module);
                 (eval, ast)
             },

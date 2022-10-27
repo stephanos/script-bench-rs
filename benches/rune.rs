@@ -26,7 +26,7 @@ pub fn main() {
 
     let array = Vec::new();
     for i in 0..100000 {
-        array.push(RustData::new(generate_string(rand(16) + 1)));
+        array.push(generate_string(rand(16) + 1));
     }
 }"#;
 
@@ -47,7 +47,7 @@ pub fn module() -> Result<Module, ContextError> {
 
 pub fn benchmark(c: &mut Criterion) {
     let mut sources = Sources::new();
-    sources.insert(Source::new("sort_userdata.rn", PROG));
+    sources.insert(Source::new("userdata.rn", PROG));
 
     let mut context = Context::with_default_modules().unwrap();
     context.install(&module().unwrap()).unwrap();
@@ -69,7 +69,7 @@ pub fn benchmark(c: &mut Criterion) {
     let unit = result.unwrap();
 
     let mut vm = Vm::new(runtime, Arc::new(unit));
-    c.bench_function("Sort userdata", |b| {
+    c.bench_function("userdata", |b| {
         b.iter(|| {
             let _ = vm.call(&["main"], ()).unwrap();
         });

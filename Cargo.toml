@@ -10,6 +10,8 @@ mlua_luau = ["mlua/luau"]
 mlua_luajit = ["mlua/luajit", "mlua/vendored"]
 
 [dependencies]
+derive_more = "0.99.17"
+gazebo = "0.8.1"
 rand = "0.8"
 mlua = { version = "0.8.4", optional = true }
 rlua = { version = "0.19.4", optional =  true }

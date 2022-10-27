@@ -34,11 +34,11 @@ fn benchmark(c: &mut Criterion) {
             .unwrap();
 
         let f = ctx
-            .load(include_str!("sort_userdata.lua"))
+            .load(include_str!("userdata.lua"))
             .into_function()
             .unwrap();
 
-        c.bench_function("Sort userdata", |b| {
+        c.bench_function("userdata", |b| {
             b.iter(|| {
                 f.call::<_, ()>(()).unwrap();
             });
